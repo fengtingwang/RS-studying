@@ -1,6 +1,6 @@
-
+#使用CART算法对MNIST进行训练，并与LR算法比较
 # coding: utf-8
-
+#导入所需的库
 import sys
 import pandas as pd
 import matplotlib
@@ -29,28 +29,15 @@ predict_y=lr.predict(test_ss_x)
 print('Ir准确率: %0.4lf' % accuracy_score(test_y, predict_y))
 
 
-
-
-
 from sklearn.tree import DecisionTreeClassifier
 # 加载数据
 digits=load_digits()
 data = digits.data
 #了解数据
 print("keys of digits: \n{}".format(digits.keys()))#数据的表头有哪些
-
-
-
-
-
 print("target names: {}".format(digits['target_names']))#手写数字识别的结果是怎样的
 print("Type of data: {}".format(type(digits['data'])))#数据的格式是怎样的
 print("Shape of data: {}".format(digits['data'].shape))#样本量有多大，有多少特征
-
-
-
-
-
 # 分割数据，将25%的数据作为测试集，其余作为训练集
 train_x, test_x, train_y, test_y = train_test_split(data, digits.target, test_size=0.25, random_state=33)
 # 采用Z-Score规范化
